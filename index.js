@@ -62,7 +62,7 @@ const ProjectModule = (function () {
 	      if(typeof participantObject !== 'object' || participantObject === null || typeof callbackFunction !== 'function') return;
 	      this.isBusy = true;
 	      setTimeout(() => {
-	        const idx =  this.participants.findIndex(obj =>  JSON.stringify(obj) === JSON.stringify(participantObject) );
+	        const idx =  this.participants.indexOf(participantObject);
 	        if(~idx){
 	          let removedParticipant = this.participants.splice(idx, 1)[0];
 	          this.isBusy = false;   
